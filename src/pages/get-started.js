@@ -30,7 +30,7 @@ export default function GetStarted() {
         </p>
         <pre className="p-2 bg-dark ml-3">
           <code className="ml-3 text-light">
-            {`<script src="${SERVER_URI}/scripts/catpcha.js"></script>`}
+            {`<script src="${SERVER_URI}/src/scripts/catpcha.js"></script>`}
           </code>
         </pre>
         <p className="ml-3">

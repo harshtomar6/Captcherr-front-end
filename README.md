@@ -1,9 +1,5 @@
-# Gatsby React Bootstrap Starter
+# Captcherr Front End
 
-A GatsbyJS starter that includes
+This is the front-end for [Captcherr](https://captcherr.herokuapp.com).
 
-- react-bootstrap
-- react-icons
-- sticky on scroll navbar
-- SASS compiler
-- basic layout
+Built with React, Gatsby and react-bootstrap

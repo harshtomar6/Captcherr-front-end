@@ -25,7 +25,7 @@ const IndexPage = () => (
             Get Started
           </Button>
           <Button
-            href={`${SERVER_URI}/example.html`}
+            href={`${SERVER_URI}/src/example.html`}
             variant="outline-primary"
             size="lg"
             className="m-2"
