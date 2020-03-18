@@ -32,7 +32,10 @@ export default function Profile() {
             `<div id="captcha-container" data-apikey="${user._id}"></div>`
           }
         </code> <br/>
-        <small>Note - You can place the above code anywhere in your HTML page</small>
+        <small>Note - You can place the above code anywhere in your HTML page</small><br/>
+        <br/>
+
+        <Button href="/get-started">View Documentation</Button>
     </Container>
   )
 }

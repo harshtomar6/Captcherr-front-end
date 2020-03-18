@@ -6,7 +6,7 @@ import Form from "react-bootstrap/form"
 import Button from "react-bootstrap/Button"
 import Alert from 'react-bootstrap/Alert'
 import Spinner from 'react-bootstrap/Spinner'
-import { Link } from 'gatsby'
+import { Link, navigate } from 'gatsby'
 import { SERVER_URI } from './../globals';
 
 export default function Login() {
@@ -36,18 +36,39 @@ export default function Login() {
 
       const res = await resObj.json();
 
-      setLoading(false)
       if(res.err) {
+        setLoading(false)
         setIsError(true)
         setError(res.err)
+        return;
       }
+
+      const loginResObj = await fetch(`${SERVER_URI}/user/login`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          email,
+          password
+        })
+      });
+      const loginRes = await loginResObj.json();
+
+      if(loginRes.err) {
+        setLoading(false);
+        setIsError(true)
+        setError(loginRes.err)
+      }
+
+      localStorage.setItem('@user', JSON.stringify(loginRes.data));
+      navigate('/app')
 
     } catch (err) {
       setLoading(false)
       setIsError(true)
       setError(err.toString())
     }
-
   }
 
   return (
