@@ -1,10 +1,9 @@
 import React from "react"
 import { Link } from "gatsby"
-import { isLoggedIn } from './../services/auth'
+import { isLoggedIn, _handleLogout } from './../services/auth'
 import { Navbar, Nav, Form, FormControl, Button, Container } from "react-bootstrap"
 
 const CustomNavbar = ({ pageInfo }) => {
-  console.log(pageInfo)
   return (
     <>
       <Navbar variant="dark" expand="lg" id="site-navbar">
@@ -23,7 +22,7 @@ const CustomNavbar = ({ pageInfo }) => {
           </Nav> */}
           <Nav className="ml-auto">
             {
-              isLoggedIn ? <p>Hey</p> :
+              isLoggedIn() ? <Button variant="outline-danger" onClick={_handleLogout}>Logout</Button> :
               <>
               <Button href="/login" className="m-2" variant="outline-primary">Login</Button>
               <Button href="/signup" className="m-2">Create Account</Button>
