@@ -29,9 +29,10 @@ export default function Profile() {
         </p>
         <code className="ml-3">
           {
-            `<div id="captcha-container" data-apikey="YOUR_API_KEY"></div>`
+            `<div id="captcha-container" data-apikey="${user._id}"></div>`
           }
-        </code>
+        </code> <br/>
+        <small>Note - You can place the above code anywhere in your HTML page</small>
     </Container>
   )
 }
