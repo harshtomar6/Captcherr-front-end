@@ -26,7 +26,7 @@ export default function GetStarted() {
 
         <h5>2. Add Captcha widget</h5>
         <p className="ml-3 mb-0">
-          Paste the following code at the end of body to request for a captcha
+          Paste the following code before the closing body tag to request for a captcha
         </p>
         <pre className="p-2 bg-dark ml-3">
           <code className="ml-3 text-light">
@@ -66,6 +66,31 @@ export default function GetStarted() {
             }
           </code>
         </pre>
+        <p className="ml-3">
+          The API will respond as
+        </p>
+        <pre className="p-2 ml-3 bg-dark">
+          <code className="text-light">
+            {`
+            {
+              "err": null,
+              "data": {
+                "_id": "5e724a615f511037840344af",
+                "solved": true,
+                "user": "5e6f42d5660ca41440d4836e",
+                "createdAt": "2020-03-18T16:20:49.552Z",
+                "validated": true
+              }
+            }
+            `
+            }
+          </code>
+        </pre>
+        <p className="ml-3">
+          If the Captcha is validated successfully, <code>validated</code> field will be true.
+          Don't confuse <code>solved</code> with <code>validated</code> field.
+          <code> solved</code> field will always be true. It implies that an attempt made to solve this captcha.
+        </p>
       </Container>
     </Layout>
   )
